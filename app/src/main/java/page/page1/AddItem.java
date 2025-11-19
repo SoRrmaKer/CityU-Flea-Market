@@ -40,21 +40,23 @@ public class AddItem extends AppCompatActivity {
     private Spinner  sp;
     private ImageButton imageButton;
     private byte[] image;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_m1);
         final SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss ");
-        //dbHelper=new MyDatabaseHelper(this,"1600802129.db",null,1);
+
         dbHelper = new DatabaseHelper(this);
         final SQLiteDatabase db = dbHelper.getReadableDatabase();
+
         String[] ctype = new String[]{"生活用品", "学习用品", "电子产品", "体育用品"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ctype);  //创建一个数组适配器
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);     //设置下拉列表框的下拉选项样式
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ctype);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         Spinner spinner = (Spinner) super.findViewById(R.id.m1_style);
         spinner.setAdapter(adapter);
         sp = (Spinner) findViewById(R.id.m1_style);
-        final String kind = (String) sp.getSelectedItem();
 
         imageButton=(ImageButton)findViewById(R.id.m1_image);
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +72,6 @@ public class AddItem extends AppCompatActivity {
                             android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(intent, 1);
                 }
-
             }
         });
 
@@ -79,25 +80,72 @@ public class AddItem extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
+                // 在发布按钮点击时获取分类
+                String kind = (String) sp.getSelectedItem();
+
                 EditText title=(EditText)findViewById(R.id.m1_title);
                 EditText price=(EditText)findViewById(R.id.m1_price);
                 EditText phone=(EditText)findViewById(R.id.m1_phone);
                 EditText nr=(EditText)findViewById(R.id.m1_nr);
+
+                // 获取输入内容
+                String titleText = title.getText().toString().trim();
+                String priceText = price.getText().toString().trim();
+                String phoneText = phone.getText().toString().trim();
+                String infoText = nr.getText().toString().trim();
+
+                // 输入验证
+                if (titleText.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "需要输入商品标题", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (priceText.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "需要输入商品价格", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (phoneText.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "需要输入联系方式", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (infoText.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "需要输入商品描述", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (image == null) {
+                    Toast.makeText(getApplicationContext(), "需要选择商品图片", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 Date curDate = new Date(System.currentTimeMillis());
                 String time = formatter.format(curDate);
+
                 ContentValues values=new ContentValues();
-                values.put("title",title.getText().toString());
-                values.put("userId",post_userid);
+                values.put("title", titleText);
+                values.put("userId", post_userid);
                 values.put("kind", kind);
-                values.put("time",time);
-                values.put("price",price.getText().toString());
-                values.put("contact",phone.getText().toString());
-                values.put("info",nr.getText().toString());
-                values.put("image",image);
-                db.insert("iteminfo",null,values);
-                Intent intent=new Intent(AddItem.this,AddItem.class);
-                Toast.makeText(getApplicationContext(), "发布成功", Toast.LENGTH_SHORT).show();
-                startActivity(intent);
+                values.put("time", time);
+                values.put("price", priceText);
+                values.put("contact", phoneText);
+                values.put("info", infoText);
+                values.put("image", image);
+
+                long result = db.insert("iteminfo",null,values);
+                if (result != -1) {
+                    Toast.makeText(getApplicationContext(), "发布成功", Toast.LENGTH_SHORT).show();
+                    // 清空输入框
+                    title.setText("");
+                    price.setText("");
+                    phone.setText("");
+                    nr.setText("");
+                    imageButton.setImageResource(android.R.drawable.ic_menu_gallery);
+                    image = null;
+                } else {
+                    Toast.makeText(getApplicationContext(), "发布失败", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -117,7 +165,6 @@ public class AddItem extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     @Override
@@ -128,21 +175,27 @@ public class AddItem extends AppCompatActivity {
             Uri selectedImage = data.getData();
             String[] filePathColumns = {MediaStore.Images.Media.DATA};
             Cursor c = getContentResolver().query(selectedImage, filePathColumns, null, null, null);
-            c.moveToFirst();
-            int columnIndex = c.getColumnIndex(filePathColumns[0]);
-            String imagePath = c.getString(columnIndex);
-            showImage(imagePath);
-            c.close();
+            if (c != null && c.moveToFirst()) {
+                int columnIndex = c.getColumnIndex(filePathColumns[0]);
+                String imagePath = c.getString(columnIndex);
+                showImage(imagePath);
+                c.close();
+            }
         }
     }
 
     //加载图片
     private void showImage(String imaePath) {
-        Bitmap bm = BitmapFactory.decodeFile(imaePath);
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        image = baos.toByteArray();
-        imageButton.setImageBitmap(bm);
+        try {
+            Bitmap bm = BitmapFactory.decodeFile(imaePath);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
+            image = baos.toByteArray();
+            imageButton.setImageBitmap(bm);
+        } catch (Exception e) {
+            Toast.makeText(this, "图片加载失败，请重新选择", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -150,8 +203,12 @@ public class AddItem extends AppCompatActivity {
         switch (requestCode) {
             case 1:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // 权限已授予，可以打开相册
+                    Intent intent = new Intent(Intent.ACTION_PICK,
+                            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(intent, 1);
                 } else {
-                    Toast.makeText(this, "You denied the permission", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "需要相册权限才能选择图片", Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
