@@ -49,14 +49,14 @@ public class MyItems extends AppCompatActivity implements View.OnClickListener{
             return;
         }
 
-        // 只查询当前用户的商品，按时间倒序排列
+
         Cursor cursor = db.query(
                 TABLENAME,
                 null,
-                "userId=?",  // 只查询当前用户的商品
+                "userId=?",
                 new String[]{currentUserId},
                 null, null,
-                "id DESC"  // 按ID倒序排列，最新的在前面
+                "id DESC"  // SELECT * FROM iteminfo WHERE userId = 'user123' ORDER BY id DESC
         );
 
         if (cursor.moveToFirst()){
@@ -79,7 +79,7 @@ public class MyItems extends AppCompatActivity implements View.OnClickListener{
         }
         cursor.close();
 
-        // 使用SimpleAdapter布局listview
+
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, data, R.layout.activity_my_fabu, new String[] { "image", "title", "kind", "info", "price" },
                 new int[] { R.id.item_image, R.id.title, R.id.kind, R.id.info, R.id.price });
         simpleAdapter.setViewBinder(new SimpleAdapter.ViewBinder() {
@@ -114,7 +114,7 @@ public class MyItems extends AppCompatActivity implements View.OnClickListener{
             }
         });
 
-        // 添加列表项点击事件
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -130,7 +130,7 @@ public class MyItems extends AppCompatActivity implements View.OnClickListener{
                 String delId = data.get(position).get("id").toString();
                 String itemUserId = data.get(position).get("userid").toString();
 
-                // 验证当前用户是否有权限删除这个商品
+                // useless,这里并没有真正使用，只是为了保证代码的健壮性- -
                 if (!itemUserId.equals(currentUserId)) {
                     Toast.makeText(getApplicationContext(), "您只能删除自己发布的商品", Toast.LENGTH_SHORT).show();
                     return false;

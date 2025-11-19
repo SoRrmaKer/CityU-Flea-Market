@@ -59,33 +59,7 @@ public class main_page extends AppCompatActivity implements View.OnClickListener
                 data.add(item); // 加入到列表中
             }
         }
-        /*
-        item = new HashMap<String, Object>();
-        item.put("userid","ysh");
-        item.put("image", R.drawable.buy_item1);
-        item.put("title","一个九成新的篮球");
-        item.put("kind","体育用品");
-        item.put("info", "刚买没多久，希望转卖出去...");
-        item.put("price", "59元");
-        data.add(item);
-        item = new HashMap<String, Object>();
-        item.put("userid","xg");
-        item.put("image", R.drawable.buy_item2);
-        item.put("title","一个八成新的篮球");
-        item.put("kind","体育用品");
-        item.put("info", "刚买没多久，希望转卖出去...");
-        item.put("price", "59元");
-        data.add(item);
-        item = new HashMap<String, Object>();
-        item.put("userid","hdq");
-        item.put("image", R.drawable.buy_item3);
-        item.put("title","一个八成新的篮球");
-        item.put("kind","体育用品");
-        item.put("info", "刚买没多久，希望转卖出去...");
-        item.put("price", "59元");
-        data.add(item);
-        */
-        // 使用SimpleAdapter布局listview
+
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, data, R.layout.listitem, new String[] { "image", "title", "kind", "info", "price" },
                 new int[] { R.id.item_image, R.id.title, R.id.kind, R.id.info, R.id.price });
         simpleAdapter.setViewBinder(new SimpleAdapter.ViewBinder() {
@@ -111,7 +85,7 @@ public class main_page extends AppCompatActivity implements View.OnClickListener
         kind3.setOnClickListener(this);
         ImageView kind4 = (ImageView) findViewById(R.id.kind4);
         kind4.setOnClickListener(this);
-        // 为列表项设置监听器
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

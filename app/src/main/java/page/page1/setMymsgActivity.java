@@ -52,14 +52,14 @@ public class setMymsgActivity extends AppCompatActivity {
             intent = new Intent(setMymsgActivity.this,MyselfActivity.class);
             startActivity(intent);
         }
-      //账号userId，密码passWord，姓名name，专业subject，电话phone，QQ号qq,地址address
+
         DatabaseHelper dbhelper = new DatabaseHelper(this);
         SQLiteDatabase db=dbhelper.getReadableDatabase();
 
         usersave.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) {//账号userId，密码passWord，姓名name，专业subject，电话phone，QQ号qq,地址address
+            public void onClick(View v) {
                 post_name=username.getText().toString();
                 post_subject=usersubject.getText().toString();
                 post_phone=userphone.getText().toString();

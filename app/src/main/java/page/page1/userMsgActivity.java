@@ -46,7 +46,7 @@ public class userMsgActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "请先登录！", Toast.LENGTH_SHORT).show();
             intent = new Intent(userMsgActivity.this, LoginMainActivity.class);
             startActivity(intent);
-        } else {//账号userId，密码passWord，姓名name，专业subject，电话phone，QQ号qq,地址address
+        } else {
             DatabaseHelper dbhelper = new DatabaseHelper(this);
             SQLiteDatabase db = dbhelper.getReadableDatabase();
             try {

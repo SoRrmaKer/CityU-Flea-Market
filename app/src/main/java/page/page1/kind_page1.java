@@ -78,7 +78,7 @@ public class kind_page1 extends AppCompatActivity {
         });
         listView.setAdapter(simpleAdapter);
 
-        // 添加ListView点击事件 - 这是关键修复
+        // 添加ListView点击事件bug点
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -66,7 +66,7 @@ public class AddItem extends AppCompatActivity {
                     ActivityCompat.requestPermissions(AddItem.this, new
                             String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
                 } else {
-                    // 打开系统相册
+
                     Intent intent = new Intent(Intent.ACTION_PICK,
                             android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(intent, 1);
