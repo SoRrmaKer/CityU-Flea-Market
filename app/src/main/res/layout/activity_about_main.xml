@@ -1,66 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFFFFF"
     tools:context="page.page1.AboutMainActivity">
+
+    <!-- 顶部标题栏 -->
     <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#1E90FF"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:gravity="center"
-            android:text="关于我们"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-    </LinearLayout>
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical"
-        android:fadingEdge="vertical">
+        android:orientation="vertical"
+        android:background="#3F51B5"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关于我们"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="校园易 - 让闲置物品流动起来"
+            android:textColor="#E8EAF6"
+            android:textSize="14sp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <!-- 内容区域 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="24dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- 应用名称 -->
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:text="校园易"
-                android:textSize="35dp"
+                android:textColor="#3F51B5"
+                android:textSize="32sp"
+                android:textStyle="bold"
                 android:gravity="center"
-                />
-            <TextView
+                android:layout_marginBottom="24dp" />
+
+            <!-- 应用描述 -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:text="    每逢毕业季，许多毕业生都会选择将自己一些物品进行售卖，而在平时也经常会有同学想要把自己闲置的物品进行售卖，他们售卖的途径大多是通过聊天群，校园贴吧甚至摆摊的形式。\n    本产品可以为卖方和买方提供一个平台进行交易，信息资源更加集中，提高成交率。"
-                android:textSize="30dp"
-                />
-            <Button
-                android:id="@+id/cometo"
+                android:orientation="vertical"
+                android:background="#F8F9FA"
+                android:padding="20dp"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="应用介绍"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="校园易，专为大学生打造的闲置交易平台。告别繁琐的群聊和贴吧，让闲置物品在校园内轻松流转。我们连接买卖双方，让每一件闲置都能找到新主人，让每一次交易都简单安心。"
+                    android:textColor="#666666"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="4dp" />
+            </LinearLayout>
+
+            <!-- 功能特点 -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:text="进入主页"
-                android:textSize="30dp"
-                />
+                android:orientation="vertical"
+                android:background="#F8F9FA"
+                android:padding="20dp"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="功能特点"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• 便捷的商品发布\n• 智能的商品分类\n• 安全的交易环境\n• 校园专属平台"
+                    android:textColor="#666666"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="4dp" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
+
+    <!-- 底部按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#FFFFFF">
+
+        <Button
+            android:id="@+id/cometo"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="进入主页"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="#3F51B5" />
+
+    </LinearLayout>
+
 </LinearLayout>

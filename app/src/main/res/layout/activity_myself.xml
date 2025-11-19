@@ -4,234 +4,280 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context="page.page1.MyselfActivity">
-    >
-    <LinearLayout
 
+    <!-- 顶部标题区域 -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#1E90FF">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#3F51B5"
+        android:padding="20dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="个人中心"
-            android:textSize="30dp"
-            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
             android:textStyle="bold"
-            android:gravity="center"
-            android:layout_gravity="center" />
+            android:gravity="center" />
     </LinearLayout>
 
+    <!-- 用户信息区域 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical">
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:src="@drawable/pic_myself"
-            />
+            android:layout_marginBottom="12dp" />
+
         <TextView
             android:id="@+id/myId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="User"
-            android:textSize="25dp"
+            android:textSize="20sp"
+            android:textColor="#333333"
             android:gravity="center"
-            />
+            android:textStyle="bold" />
+    </LinearLayout>
 
+    <!-- 功能菜单区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 个人信息 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/person"/>
+                android:layout_marginTop="16dp"
+                android:src="@drawable/person"
+                android:tint="#3F51B5" />
+
             <Button
                 android:id="@+id/myself"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="5dp"
                 android:text="个人信息"
-                android:textSize="25dp"
+                android:textSize="16sp"
                 android:gravity="left"
-
-                />
+                android:textColor="#333333"
+                android:background="@android:color/transparent"
+                android:paddingLeft="16dp" />
         </LinearLayout>
+
+        <!-- 我的发布 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/pic_search"/>
+                android:layout_marginTop="16dp"
+                android:src="@drawable/pic_search"
+                android:tint="#3F51B5" />
+
             <Button
                 android:id="@+id/myShow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
                 android:text="我的发布"
-                android:textSize="25dp"
+                android:textSize="16sp"
                 android:gravity="left"
-
-                />
+                android:textColor="#333333"
+                android:background="@android:color/transparent"
+                android:paddingLeft="16dp" />
         </LinearLayout>
+
+        <!-- 修改密码 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/pic_set"/>
+                android:layout_marginTop="16dp"
+                android:src="@drawable/pic_set"
+                android:tint="#3F51B5" />
+
             <Button
                 android:id="@+id/changepwd"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
                 android:text="修改密码"
-                android:textSize="25dp"
+                android:textSize="16sp"
                 android:gravity="left"
-
-                />
+                android:textColor="#333333"
+                android:background="@android:color/transparent"
+                android:paddingLeft="16dp" />
         </LinearLayout>
+
+        <!-- 关于 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/pic_about"/>
+                android:layout_marginTop="16dp"
+                android:src="@drawable/pic_about"
+                android:tint="#3F51B5" />
+
             <Button
                 android:id="@+id/about"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
                 android:text="关 于"
-                android:textSize="25dp"
+                android:textSize="16sp"
                 android:gravity="left"
-
-                />
+                android:textColor="#333333"
+                android:background="@android:color/transparent"
+                android:paddingLeft="16dp" />
         </LinearLayout>
+
+        <!-- 登录/退出 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/pic_login"/>
+                android:layout_marginTop="16dp"
+                android:src="@drawable/pic_login"
+                android:tint="#3F51B5" />
 
             <Button
                 android:id="@+id/login"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
-                android:gravity="left"
                 android:text="登 录"
-                android:textSize="25dp"
-
-                />
+                android:textSize="16sp"
+                android:gravity="left"
+                android:textColor="#333333"
+                android:background="@android:color/transparent"
+                android:paddingLeft="16dp" />
         </LinearLayout>
+
     </LinearLayout>
+
     <FrameLayout
         android:id="@+id/framelayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        />
-    <!--中间为一条分割线-->
-    <View
-        android:background="#666666"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginBottom="1dp"
-        />
+        android:layout_weight="1" />
 
-    <!--最下边为RadioGroup-->
+    <!-- 分割线 -->
+    <View
+        android:background="#E0E0E0"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <!-- 底部导航栏 -->
     <RadioGroup
         android:id="@+id/radioGroup"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="64dp"
+        android:background="#FFFFFF">
 
-        <!--第一个RadioButton-->
+        <!-- 首页 -->
         <RadioButton
             android:id="@+id/button_1"
             android:text="首页"
             android:textStyle="bold"
             android:button="@null"
-            android:textColor="#666666"
-            android:background="#ffffff"
+            android:textColor="#3F51B5"
+            android:background="#FFFFFF"
             android:gravity="center"
             android:layout_weight="1"
             android:drawableTop="@drawable/pic_home"
+            android:drawableTint="#3F51B5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent" />
 
-            />
+        <!-- 分割线 -->
         <View
-            android:background="#CCCCCC"
-            android:layout_width="2dp"
-            android:layout_height="match_parent"/>
-        <!--第二个RadioButton-->
+            android:background="#E0E0E0"
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+        <!-- 发布闲置 -->
         <RadioButton
             android:id="@+id/button_2"
             android:text="发布闲置"
             android:button="@null"
             android:textStyle="bold"
             android:textColor="#666666"
-            android:background="#ffffff"
+            android:background="#FFFFFF"
             android:gravity="center"
             android:layout_weight="1"
             android:drawableTop="@drawable/pic_add"
+            android:drawableTint="#666666"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <!--第三个RadioButton-->
+            android:layout_height="match_parent" />
+
+        <!-- 分割线 -->
         <View
-            android:background="#CCCCCC"
-            android:layout_width="2dp"
-            android:layout_height="match_parent"/>
+            android:background="#E0E0E0"
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+        <!-- 个人中心 -->
         <RadioButton
             android:id="@+id/button_3"
             android:text="个人中心"
             android:textStyle="bold"
             android:button="@null"
             android:textColor="#666666"
-            android:background="#ffffff"
+            android:background="#FFFFFF"
             android:gravity="center"
             android:layout_weight="1"
             android:drawableTop="@drawable/pic_my"
+            android:drawableTint="#666666"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
+            android:layout_height="match_parent" />
 
     </RadioGroup>
+
 </LinearLayout>
