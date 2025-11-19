@@ -1,6 +1,5 @@
 package page.page1;
 
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -36,12 +35,33 @@ public class MyItems extends AppCompatActivity implements View.OnClickListener{
         DatabaseHelper database = new DatabaseHelper(this);
         final SQLiteDatabase db = database.getWritableDatabase();
         ListView listView = (ListView)findViewById(R.id.show_fabu);
-        Map<String, Object> item;  // 列表项内容用Map存储
-        final List<Map<String, Object>> data = new ArrayList<Map<String, Object>>(); // 列表
-        Cursor cursor = db.query(TABLENAME,null,null,null,null,null,null,null); // 数据库查询
+        Map<String, Object> item;
+        final List<Map<String, Object>> data = new ArrayList<Map<String, Object>>();
+
+        // 关键修复：只查询当前登录用户的商品
+        String currentUserId = LoginMainActivity.post_userid;
+
+        if (currentUserId == null || currentUserId.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "请先登录", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MyItems.this, LoginMainActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
+
+        // 只查询当前用户的商品，按时间倒序排列
+        Cursor cursor = db.query(
+                TABLENAME,
+                null,
+                "userId=?",  // 只查询当前用户的商品
+                new String[]{currentUserId},
+                null, null,
+                "id DESC"  // 按ID倒序排列，最新的在前面
+        );
+
         if (cursor.moveToFirst()){
             while (!cursor.isAfterLast()){
-                item = new HashMap<String, Object>();  // 为列表项赋值
+                item = new HashMap<String, Object>();
                 item.put("id",cursor.getInt(0));
                 item.put("userid",cursor.getString(1));
                 item.put("title",cursor.getString(2));
@@ -50,41 +70,15 @@ public class MyItems extends AppCompatActivity implements View.OnClickListener{
                 item.put("price",cursor.getString(5));
                 imagedata = cursor.getBlob(6);
                 imagebm = BitmapFactory.decodeByteArray(imagedata, 0, imagedata.length);
-                //kind1.setImageBitmap(imagebm);
                 item.put("image",imagebm);
                 cursor.moveToNext();
-                data.add(item); // 加入到列表中
+                data.add(item);
             }
+        } else {
+            Toast.makeText(getApplicationContext(), "您还没有发布过商品", Toast.LENGTH_SHORT).show();
         }
-        /*
-        item = new HashMap<String, Object>();
-        item.put("id",1);
-        item.put("userid","ysh");
-        item.put("image", R.drawable.buy_item1);
-        item.put("title","一个九成新的篮球");
-        item.put("kind","体育用品");
-        item.put("info", "刚买没多久，希望转卖出去...");
-        item.put("price", "59元");
-        data.add(item);
-        item = new HashMap<String, Object>();
-        item.put("id",2);
-        item.put("userid","xg");
-        item.put("image", R.drawable.buy_item2);
-        item.put("title","一个八成新的篮球");
-        item.put("kind","体育用品");
-        item.put("info", "刚买没多久，希望转卖出去...");
-        item.put("price", "59元");
-        data.add(item);
-        item = new HashMap<String, Object>();
-        item.put("id",3);
-        item.put("userid","hdq");
-        item.put("image", R.drawable.buy_item3);
-        item.put("title","一个八成新的篮球");
-        item.put("kind","体育用品");
-        item.put("info", "刚买没多久，希望转卖出去...");
-        item.put("price", "59元");
-        data.add(item);
-        */
+        cursor.close();
+
         // 使用SimpleAdapter布局listview
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, data, R.layout.activity_my_fabu, new String[] { "image", "title", "kind", "info", "price" },
                 new int[] { R.id.item_image, R.id.title, R.id.kind, R.id.info, R.id.price });
@@ -119,22 +113,43 @@ public class MyItems extends AppCompatActivity implements View.OnClickListener{
                 startActivity(intent);
             }
         });
+
+        // 添加列表项点击事件
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MyItems.this, item_info.class);
+                intent.putExtra("id", data.get(position).get("id").toString());
+                startActivity(intent);
+            }
+        });
+
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 String delId = data.get(position).get("id").toString();
+                String itemUserId = data.get(position).get("userid").toString();
+
+                // 验证当前用户是否有权限删除这个商品
+                if (!itemUserId.equals(currentUserId)) {
+                    Toast.makeText(getApplicationContext(), "您只能删除自己发布的商品", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+
                 if(db.delete(TABLENAME,"id=?",new String[]{delId}) > 0) {
                     Toast.makeText(getApplicationContext(), "删除成功，请刷新", Toast.LENGTH_SHORT).show();
+                    // 刷新页面
+                    recreate();
                     return true;
                 }
                 else {
+                    Toast.makeText(getApplicationContext(), "删除失败", Toast.LENGTH_SHORT).show();
                     return false;
                 }
             }
         });
 
     }
-
 
     @Override
     public void onClick(View v){
