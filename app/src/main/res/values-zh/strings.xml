@@ -35,6 +35,7 @@
     <string name="Comment_Hint">在此留下你的评论...</string>
     <string name="Comment_Submit">提交评论</string>
     <string name="Sports_Item">运动用品</string>
+    <string name="Edit">编辑信息</string>
     #about_main
     <string name="about_us">关于我们</string>
     <string name="app_name">校园易</string>

@@ -10,25 +10,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="10dp"
-            android:paddingStart="10dp">
-
-            <Button
-                android:id="@+id/btn_homepage"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:text="@string/HomePage"
-                android:textSize="12sp"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:background="#3F51B5" />
-        </LinearLayout>
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="150dp"
@@ -146,10 +130,10 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="12dp" />
 
-            <ListView
+            <page.page1.MyListView
                 android:id="@+id/commentList"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="wrap_content"
                 android:divider="#E0E0E0"
                 android:dividerHeight="1dp" />
 

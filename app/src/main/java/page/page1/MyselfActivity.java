@@ -21,8 +21,12 @@ public class MyselfActivity extends AppCompatActivity {
     private Button about;
     private Button login;
     private TextView myId;
+
     protected Intent intent;
     private String a;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,13 +73,13 @@ public class MyselfActivity extends AppCompatActivity {
         });
 
         //跳转到个人中心
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(MyselfActivity.this,MyselfActivity.class);
-                startActivity(intent);
-            }
-        });
+//        button3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                intent = new Intent(MyselfActivity.this,MyselfActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         //跳转到个人信息页面
         myself.setOnClickListener(new View.OnClickListener() {
@@ -135,6 +139,7 @@ public class MyselfActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
                 if(a.equals("")||a==null){
                     intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
                     startActivity(intent);
@@ -145,6 +150,13 @@ public class MyselfActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
 
+=======
+                Toast.makeText(getApplicationContext(), "退出成功", Toast.LENGTH_SHORT).show();
+                LoginMainActivity.post_userid="";
+                intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
+                startActivity(intent);
+                finish();
+>>>>>>> e15e5cc94433cb08ee670fdb23d75efd13b41895
             }
         });
 

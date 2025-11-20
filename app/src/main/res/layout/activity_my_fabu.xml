@@ -52,24 +52,25 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
             <TextView
-                android:id="@+id/price"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textColor="#ff0000"
+            android:text="59" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textSize="18dp"
                 android:textColor="#ff0000"
-                android:gravity="center_vertical"
-                android:text="59"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:textSize="18dp"
-                android:textColor="#ff0000"
-                android:gravity="center_vertical"
-                android:text="HKD   "
-                />
+                android:layout_marginLeft="5dp"
+                android:text="HKD" />
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
@@ -78,13 +79,10 @@
             <TextView
                 android:id="@+id/delete"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:textSize="15dp"
-                android:layout_gravity="end"
                 android:textColor="#ff0000"
-                android:gravity="center_vertical"
-                android:text="@string/Delete_Hint"
-                />
+                android:text="@string/Delete_Hint" />
         </LinearLayout>
 
     </LinearLayout>

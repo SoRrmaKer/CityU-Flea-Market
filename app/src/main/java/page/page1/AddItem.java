@@ -45,7 +45,7 @@ public class AddItem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_m1);
-        final SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss ");
+        final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
 
         dbHelper = new DatabaseHelper(this);
 
@@ -130,17 +130,18 @@ public class AddItem extends AppCompatActivity {
 
         Button but1 = (Button) findViewById(R.id.but1_m1);
         Button but2 = (Button) findViewById(R.id.but2_m1);
-        but2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddItem.this, MyItems.class);
-                startActivity(intent);
-            }
-        });
+
         but1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AddItem.this, main_page.class);
+                startActivity(intent);
+            }
+        });
+        but2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddItem.this, MyItems.class);
                 startActivity(intent);
             }
         });

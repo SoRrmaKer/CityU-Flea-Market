@@ -236,7 +236,7 @@
             android:layout_height="56dp"
             android:layout_weight="1"
             android:layout_marginStart="8dp"
-            android:text="@string/Confirm"
+            android:text="@string/Edit"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
