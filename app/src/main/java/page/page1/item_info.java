@@ -79,6 +79,7 @@ public class item_info extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(item_info.this, main_page.class);
                 startActivity(intent);
+                finish();
             }
         });
 
