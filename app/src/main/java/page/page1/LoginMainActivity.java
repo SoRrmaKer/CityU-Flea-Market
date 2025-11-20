@@ -48,10 +48,10 @@ public class LoginMainActivity extends Activity {
                 password=Password.getText().toString();
 
                 if(user.equals("")||user==null){
-                    Toast.makeText(getApplicationContext(), "请输入用户账号！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.account_command), Toast.LENGTH_SHORT).show();
                 }
                 if(password.equals("")||password==null){
-                    Toast.makeText(getApplicationContext(), "请输入用户密码！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.password_command), Toast.LENGTH_SHORT).show();
                 }
                 checkUser(user,password);
 
@@ -79,10 +79,10 @@ public class LoginMainActivity extends Activity {
             String sql="SELECT * FROM users WHERE userId=? and passWord=?";
             Cursor cursor=db.rawQuery(sql,new String[]{user,password});
             if(cursor.getCount()==0){
-                Toast.makeText(getApplicationContext(), "用户密码错误！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.password_wrong), Toast.LENGTH_SHORT).show();
             }
             else{
-                Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.login_success), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginMainActivity.this,main_page.class);
                 post_userid=user;
                 startActivity(intent);
@@ -90,7 +90,7 @@ public class LoginMainActivity extends Activity {
             cursor.close();
             db.close();
         }catch (SQLiteException e){
-            Toast.makeText(getApplicationContext(), "登录失败", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.login_fail), Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -95,31 +95,31 @@ public class AddItem extends AppCompatActivity {
 
                 // 完整的输入验证
                 if (titleText.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "需要输入商品标题", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.title_alarm), Toast.LENGTH_SHORT).show();
                     title.requestFocus();
                     return;
                 }
 
                 if (priceText.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "需要输入商品价格", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.price_alarm), Toast.LENGTH_SHORT).show();
                     price.requestFocus();
                     return;
                 }
 
                 if (phoneText.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "需要输入联系方式", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.contact_alarm), Toast.LENGTH_SHORT).show();
                     phone.requestFocus();
                     return;
                 }
 
                 if (infoText.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "需要输入商品描述", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.description_alarm), Toast.LENGTH_SHORT).show();
                     nr.requestFocus();
                     return;
                 }
 
                 if (image == null) {
-                    Toast.makeText(getApplicationContext(), "需要选择商品图片", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.select_pic), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -167,15 +167,15 @@ public class AddItem extends AppCompatActivity {
 
             long result = db.insert("iteminfo", null, values);
             if (result != -1) {
-                Toast.makeText(getApplicationContext(), "发布成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.submit_success), Toast.LENGTH_SHORT).show();
                 // 清空输入框
                 clearInputFields();
             } else {
-                Toast.makeText(getApplicationContext(), "发布失败，请重试", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.submit_failed), Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
-            Log.e("AddItem", "发布商品失败", e);
-            Toast.makeText(getApplicationContext(), "发布失败：" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.e("AddItem", getString(R.string.failed), e);
+            Toast.makeText(getApplicationContext(), getString(R.string.fail) + e.getMessage(), Toast.LENGTH_SHORT).show();
         } finally {
             if (db != null) {
                 db.close();
@@ -213,11 +213,11 @@ public class AddItem extends AppCompatActivity {
                         String imagePath = c.getString(columnIndex);
                         showImage(imagePath);
                     } else {
-                        Toast.makeText(this, "无法获取图片路径", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.load_fail), Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
-                    Log.e("AddItem", "图片选择失败", e);
-                    Toast.makeText(this, "图片选择失败", Toast.LENGTH_SHORT).show();
+                    Log.e("AddItem", getString(R.string.select_fail), e);
+                    Toast.makeText(this, getString(R.string.select_fail), Toast.LENGTH_SHORT).show();
                 } finally {
                     if (c != null) {
                         c.close();
@@ -237,27 +237,28 @@ public class AddItem extends AppCompatActivity {
                 bm.compress(Bitmap.CompressFormat.JPEG, 80, baos);
                 image = baos.toByteArray();
                 imageButton.setImageBitmap(bm);
-                Toast.makeText(this, "图片选择成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.select_success), Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "图片加载失败，请重新选择", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.download_fail), Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
-            Log.e("AddItem", "图片加载失败", e);
-            Toast.makeText(this, "图片加载失败：" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.e("AddItem", getString(R.string.download_failed), e);
+            Toast.makeText(this, getString(R.string.download_failed) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case 1:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     // 权限已授予，可以打开相册
                     Intent intent = new Intent(Intent.ACTION_PICK,
-                            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(intent, 1);
                 } else {
-                    Toast.makeText(this, "需要相册权限才能选择图片", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.authority_command), Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:

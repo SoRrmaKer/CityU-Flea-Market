@@ -41,7 +41,7 @@ public class kind_page4 extends AppCompatActivity {
         ListView listView = (ListView)findViewById(R.id.kind_list1);
         Map<String, Object> item = new HashMap<String, Object>();
         data = new ArrayList<Map<String, Object>>();
-        Cursor cursor = db.query(TABLENAME,null,"kind=?",new String[]{"学习用品"},null,null,null,null);
+        Cursor cursor = db.query(TABLENAME,null,"kind=?",new String[]{getString(R.string.study_stuffs)},null,null,null,null);
         if (cursor.moveToFirst()){
             while (!cursor.isAfterLast()){
                 item = new HashMap<String, Object>();

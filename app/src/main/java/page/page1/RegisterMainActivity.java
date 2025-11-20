@@ -43,13 +43,13 @@ public class RegisterMainActivity extends AppCompatActivity {
                 password2=Password2.getText().toString();
 
                 if(user==null||user.equals("")){
-                    Toast.makeText(getApplicationContext(), "请输入用户学号！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.wrong_password), Toast.LENGTH_SHORT).show();
                 }
                 if(password1==null||password1.equals("")){
-                    Toast.makeText(getApplicationContext(), "请输入密码！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.password_command), Toast.LENGTH_SHORT).show();
                 }
                 if(!password1.equals(password2)){
-                    Toast.makeText(getApplicationContext(), "两次输入的密码不一致!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.wrong_password), Toast.LENGTH_SHORT).show();
                 }
                 checkUser(user,password1);
             }
@@ -73,7 +73,7 @@ public class RegisterMainActivity extends AppCompatActivity {
             String sql="SELECT * FROM users WHERE userId=?";
             Cursor cursor=db.rawQuery(sql,new String[]{user});
             if(cursor.getCount()>0){
-                Toast.makeText(getApplicationContext(), "学号已存在！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.id_exit), Toast.LENGTH_SHORT).show();
             }
             else{
                 ContentValues values = new ContentValues();
@@ -81,14 +81,14 @@ public class RegisterMainActivity extends AppCompatActivity {
                 values.put("userId",user);
                 values.put("passWord",pwd);
                 db.insert("users",null,values);//插入第一条数据
-                Toast.makeText(getApplicationContext(), "注册成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.regist_success), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(RegisterMainActivity.this,LoginMainActivity.class);
                 startActivity(intent);
             }
             cursor.close();
             db.close();
         }catch (SQLiteException e){
-            Toast.makeText(getApplicationContext(), "注册失败", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.regist_failed), Toast.LENGTH_SHORT).show();
         }
     }
 }

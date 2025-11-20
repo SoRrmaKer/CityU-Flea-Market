@@ -36,29 +36,29 @@ public class changepwdActivity extends AppCompatActivity {
         user=LoginMainActivity.post_userid;
         showuser.setText(user);
         if(user.equals("")||user==null){
-            Toast.makeText(getApplicationContext(), "请先登录！", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.login_remind), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(changepwdActivity.this,LoginMainActivity.class);
             startActivity(intent);
         }
         change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("用户数据",user);
+                Log.i(getString(R.string.userdata),user);
                 oldpass=oldpwd.getText().toString();
                 newpass=newpwd.getText().toString();
                 newpass1=newpwd1.getText().toString();
 
                 boolean flag=true;
                 if(oldpass.equals("")||oldpass==null){
-                    Toast.makeText(getApplicationContext(), "请输入旧密码！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.old_password_remind), Toast.LENGTH_SHORT).show();
                     flag=false;
                 }
                 if(newpass.equals("")||newpass==null){
-                    Toast.makeText(getApplicationContext(), "请输入新密码！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.new_password_remind), Toast.LENGTH_SHORT).show();
                     flag=false;
                 }
                 if (!newpass.equals(newpass1)){
-                    Toast.makeText(getApplicationContext(), "两次密码不一致！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.wrong_password), Toast.LENGTH_SHORT).show();
                     flag=false;
                 }
                 if(flag){
@@ -85,20 +85,20 @@ public class changepwdActivity extends AppCompatActivity {
             String sql="SELECT * FROM users WHERE userId=? and passWord=?";
             Cursor cursor=db.rawQuery(sql,new String[]{user,oldpass});
             if(cursor.getCount()==0){
-                Toast.makeText(getApplicationContext(), "用户旧密码错误！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.old_wrong), Toast.LENGTH_SHORT).show();
             }
             else{
                 ContentValues values=new ContentValues();
                 values.put("passWord",newpass);
                 db.update("users",values,"userId=?",new String[] {user});
-                Toast.makeText(getApplicationContext(), "修改成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.change_success), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(changepwdActivity.this,MyselfActivity.class);
                 startActivity(intent);
             }
             cursor.close();
             db.close();
         }catch (SQLiteException e){
-            Toast.makeText(getApplicationContext(), "修改失败", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.change_fail), Toast.LENGTH_SHORT).show();
         }
     }
 }

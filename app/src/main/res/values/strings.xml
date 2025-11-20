@@ -82,4 +82,58 @@
     <string name="item_description_inform">Please enter your description</string>
     <string name="Comment">Comments</string>
     <string name="Delete_Hint">Hold to Delete</string>
+    #AddItem
+    <string name="title_alarm">Please enter the item title</string>
+    <string name="price_alarm">Please enter the item price</string>
+    <string name="contact_alarm">Please enter your contact information</string>
+    <string name="description_alarm">Please enter the item description</string>
+    <string name="select_pic">Please select item images</string>
+    <string name="submit_success">Published successfully</string>
+    <string name="submit_failed">Publish failed, please try again</string>
+    <string name="failed">Failed to publish item</string>
+    <string name="fail">Publish failed: </string>
+    <string name="load_fail">Unable to get image path</string>
+    <string name="select_fail">Image selection failed</string>
+    <string name="select_success">Image selected successfully</string>
+    <string name="download_fail">Image loading failed, please select again</string>
+    <string name="download_failed">Image loading failed</string>
+    <string name="authority_command">Gallery permission is required to select images</string>
+
+    #changepwd
+    <string name="login_remind">Please log in first!</string>
+    <string name="userdata">User data</string>
+    <string name="old_password_remind">Please enter your old password!</string>
+    <string name="new_password_remind">Please enter a new password!</string>
+    <string name="wrong_password">The two passwords do not match!</string>
+    <string name="old_wrong">Old password is incorrect!</string>
+    <string name="change_success">Password changed successfully</string>
+    <string name="change_fail">Password change failed</string>
+
+    #item_info
+    <string name="commodity_id">Item ID: </string>
+    <string name="comment_success">Comment submitted successfully</string>
+
+    #LoginMainActivity
+    <string name="account_command">Please enter your account!</string>
+    <string name="password_command">Please enter your password!</string>
+    <string name="password_wrong">Incorrect password!</string>
+    <string name="login_success">Login successful</string>
+    <string name="login_fail">Login failed</string>
+
+    #MyItems
+    <string name="pub_remind">You have not published any items yet</string>
+    <string name="delete_commodity">You can only delete items published by yourself</string>
+    <string name="delete_success">Deleted successfully, please refresh</string>
+    <string name="delete_fail">Delete failed</string>
+    <string name="logout_success">Logged out successfully</string>
+
+    #Register
+    <string name="id_remind">Please enter your student ID!</string>
+    <string name="id_exit">This student ID already exists!</string>
+    <string name="regist_success">Registration successful</string>
+    <string name="regist_failed">Registration failed</string>
+
+    #usermsg
+    <string name="user_unknown">User does not exist!</string>
+    <string name="inform_failed">Unable to display personal information</string>
 </resources>

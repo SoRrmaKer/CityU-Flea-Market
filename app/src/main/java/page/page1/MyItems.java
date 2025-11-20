@@ -42,7 +42,7 @@ public class MyItems extends AppCompatActivity implements View.OnClickListener{
         String currentUserId = LoginMainActivity.post_userid;
 
         if (currentUserId == null || currentUserId.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "请先登录", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.login_remind), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MyItems.this, LoginMainActivity.class);
             startActivity(intent);
             finish();
@@ -75,7 +75,7 @@ public class MyItems extends AppCompatActivity implements View.OnClickListener{
                 data.add(item);
             }
         } else {
-            Toast.makeText(getApplicationContext(), "您还没有发布过商品", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.pub_remind), Toast.LENGTH_SHORT).show();
         }
         cursor.close();
 
@@ -132,18 +132,18 @@ public class MyItems extends AppCompatActivity implements View.OnClickListener{
 
                 // useless,这里并没有真正使用，只是为了保证代码的健壮性- -
                 if (!itemUserId.equals(currentUserId)) {
-                    Toast.makeText(getApplicationContext(), "您只能删除自己发布的商品", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.delete_commodity), Toast.LENGTH_SHORT).show();
                     return false;
                 }
 
                 if(db.delete(TABLENAME,"id=?",new String[]{delId}) > 0) {
-                    Toast.makeText(getApplicationContext(), "删除成功，请刷新", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.delete_success), Toast.LENGTH_SHORT).show();
                     // 刷新页面
                     recreate();
                     return true;
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "删除失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.delete_fail), Toast.LENGTH_SHORT).show();
                     return false;
                 }
             }

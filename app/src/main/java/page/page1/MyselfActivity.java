@@ -59,7 +59,7 @@ public class MyselfActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {if(a.equals("")||a==null){
-                Toast.makeText(getApplicationContext(), "请先登录！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.login_remind), Toast.LENGTH_SHORT).show();
                 intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
                 startActivity(intent);
             }
@@ -82,7 +82,7 @@ public class MyselfActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(a.equals("")){
-                    Toast.makeText(getApplicationContext(), "请先登录！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.login_remind), Toast.LENGTH_SHORT).show();
                     intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
                     startActivity(intent);
                 }
@@ -97,7 +97,7 @@ public class MyselfActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(a.equals("")||a==null){
-                    Toast.makeText(getApplicationContext(), "请先登录！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.login_remind), Toast.LENGTH_SHORT).show();
                     intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
                     startActivity(intent);
                 }
@@ -113,7 +113,7 @@ public class MyselfActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(a.equals("")||a==null){
-                    Toast.makeText(getApplicationContext(), "请先登录！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.login_remind), Toast.LENGTH_SHORT).show();
                     intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
                     startActivity(intent);
                 }
@@ -139,7 +139,7 @@ public class MyselfActivity extends AppCompatActivity {
                     intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(getApplicationContext(), "退出成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.logout_success), Toast.LENGTH_SHORT).show();
                     LoginMainActivity.post_userid="";
                     intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
                     startActivity(intent);

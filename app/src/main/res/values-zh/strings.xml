@@ -83,4 +83,53 @@
     <string name="item_description_inform">请输入商品描述信息</string>
     <string name="Comment">评论</string>
     <string name="Delete_Hint">长按以删除</string>
+    #AddItem
+    <string name="title_alarm">需要输入商品标题</string>
+    <string name="price_alarm">需要输入商品价格</string>
+    <string name="contact_alarm">需要输入联系方式</string>
+    <string name="description_alarm">需要输入商品描述</string>
+    <string name="select_pic">需要选择商品图片</string>
+    <string name="submit_success">发布成功</string>
+    <string name="submit_failed">发布失败，请重试</string>
+    <string name="failed">发布商品失败</string>
+    <string name="fail">发布失败：</string>
+    <string name="load_fail">无法获取图片路径</string>
+    <string name="select_fail">图片选择失败</string>
+    <string name="select_success">图片选择成功</string>
+    <string name="download_fail">图片加载失败，请重新选择</string>
+    <string name="download_failed">图片加载失败</string>
+    <string name="authority_command">需要相册权限才能选择图片</string>
+    #changepwd
+    <string name="login_remind">请先登录！</string>
+    <string name="userdata">用户数据</string>
+    <string name="old_password_remind">请输入旧密码！</string>
+    <string name="new_password_remind">请输入新密码！</string>
+    <string name="wrong_password">两次密码不一致！</string>
+    <string name="old_wrong">用户旧密码错误！</string>
+    <string name="change_success">修改成功</string>
+    <string name="change_fail">修改失败</string>
+    #item_info
+    <string name="commodity_id">商品的id是</string>
+    <string name="comment_success">评论成功</string>
+    #LoginMainActivity
+    <string name="account_command">请输入用户账号！</string>
+    <string name="password_command">请输入用户密码！</string>
+    <string name="password_wrong">用户密码错误！</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_fail">登录失败</string>
+    #MyItems
+    <string name="pub_remind">您还没有发布过商品</string>
+    <string name="delete_commodity">您只能删除自己发布的商品</string>
+    <string name="delete_success">删除成功，请刷新</string>
+    <string name="delete_fail">删除失败</string>
+    <string name="logout_success">退出成功</string>
+    #Register
+    <string name="id_remind">请输入用户学号！</string>
+    <string name="id_exit">学号已存在！</string>
+    <string name="regist_success">注册成功</string>
+    <string name="regist_failed">注册失败</string>
+    #usermsg
+    <string name="user_unknown">用户不存在！</string>
+    <string name="inform_failed">无法显示个人信息</string>
+
 </resources>

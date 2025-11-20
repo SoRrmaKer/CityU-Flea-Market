@@ -45,7 +45,7 @@ public class item_info extends AppCompatActivity {
         TextView info = (TextView)findViewById(R.id.item_info);
         TextView contact = (TextView)findViewById(R.id.contact);
         Cursor cursor = db.query(TABLENAME,null,"id=?",new String[]{intent.getStringExtra("id")},null,null,null,null); // 根据接收到的id进行数据库查询
-        Log.i("商品的id是",intent.getStringExtra("id"));
+        Log.i(getString(R.string.commodity_id),intent.getStringExtra("id"));
         if (cursor.moveToFirst()){
             while (!cursor.isAfterLast()){
                 imagedata = cursor.getBlob(6);
@@ -100,8 +100,8 @@ public class item_info extends AppCompatActivity {
                 values.put("comment",submit_comment);
                 values.put("time",time);
                 db.insert("comments",null,values);
-                Log.i("1","评论成功");
-                Toast.makeText(getApplicationContext(), "评论成功", Toast.LENGTH_SHORT).show();
+                Log.i("1",getString(R.string.comment_success));
+                Toast.makeText(getApplicationContext(), getString(R.string.comment_success), Toast.LENGTH_SHORT).show();
                 Intent intent_=new Intent(item_info.this,item_info.class);
                 intent_.putExtra("id",intent.getStringExtra("id"));
                 startActivity(intent_);
