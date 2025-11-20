@@ -43,34 +43,22 @@ public class RegisterMainActivity extends AppCompatActivity {
                 password1 = Password1.getText().toString().trim();
                 password2 = Password2.getText().toString().trim();
 
-<<<<<<< HEAD
-                if(user==null||user.equals("")){
-                    Toast.makeText(getApplicationContext(), getString(R.string.wrong_password), Toast.LENGTH_SHORT).show();
-                }
-                if(password1==null||password1.equals("")){
-                    Toast.makeText(getApplicationContext(), getString(R.string.password_command), Toast.LENGTH_SHORT).show();
-=======
                 // 1. 检查学号是否为空
                 if(user.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "请输入用户学号！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.account_command), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 // 2. 检查密码是否为空
                 if(password1.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "请输入密码！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.password_command), Toast.LENGTH_SHORT).show();
                     return;
->>>>>>> e15e5cc94433cb08ee670fdb23d75efd13b41895
                 }
 
                 // 3. 检查两次密码是否一致
                 if(!password1.equals(password2)){
-<<<<<<< HEAD
                     Toast.makeText(getApplicationContext(), getString(R.string.wrong_password), Toast.LENGTH_SHORT).show();
-=======
-                    Toast.makeText(getApplicationContext(), "两次输入的密码不一致!", Toast.LENGTH_SHORT).show();
                     return;
->>>>>>> e15e5cc94433cb08ee670fdb23d75efd13b41895
                 }
 
                 checkUser(user,password1);

@@ -139,7 +139,6 @@ public class MyselfActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
                 if(a.equals("")||a==null){
                     intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
                     startActivity(intent);
@@ -149,14 +148,6 @@ public class MyselfActivity extends AppCompatActivity {
                     intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
                     startActivity(intent);
                 }
-
-=======
-                Toast.makeText(getApplicationContext(), "退出成功", Toast.LENGTH_SHORT).show();
-                LoginMainActivity.post_userid="";
-                intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
-                startActivity(intent);
-                finish();
->>>>>>> e15e5cc94433cb08ee670fdb23d75efd13b41895
             }
         });
 

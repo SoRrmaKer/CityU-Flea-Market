@@ -92,19 +92,6 @@ public class item_info extends AppCompatActivity {
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
                 Date curDate = new Date(System.currentTimeMillis());
                 String time = formatter.format(curDate);
-<<<<<<< HEAD
-                ContentValues values=new ContentValues();
-                values.put("userId",post_userid);
-                values.put("itemId",intent.getStringExtra("id"));
-                values.put("comment",submit_comment);
-                values.put("time",time);
-                db.insert("comments",null,values);
-                Log.i("1",getString(R.string.comment_success));
-                Toast.makeText(getApplicationContext(), getString(R.string.comment_success), Toast.LENGTH_SHORT).show();
-                Intent intent_=new Intent(item_info.this,item_info.class);
-                intent_.putExtra("id",intent.getStringExtra("id"));
-                startActivity(intent_);
-=======
 
                 // 1. 数据库插入操作 (保持不变)
                 ContentValues values = new ContentValues();
@@ -115,7 +102,8 @@ public class item_info extends AppCompatActivity {
                 db.insert("comments", null, values);
 
                 Log.i("1", "评论成功");
-                Toast.makeText(getApplicationContext(), "评论成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.comment_success), Toast.LENGTH_SHORT).show();
+
 
                 // ================= 修改重点开始 =================
 
@@ -133,15 +121,6 @@ public class item_info extends AppCompatActivity {
 
                 // 5. 清空输入框，防止重复提交并提升体验
                 comment.setText("");
-
-                // 6. 隐藏键盘 (可选优化，如果需要可以加上)
-                // InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                // imm.hideSoftInputFromWindow(comment.getWindowToken(), 0);
-
-                // ================= 修改重点结束 =================
-
-                // 注意：原本的 Intent跳转 和 finish() 代码已删除
->>>>>>> e15e5cc94433cb08ee670fdb23d75efd13b41895
             }
         });
     }
