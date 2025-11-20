@@ -73,16 +73,6 @@ public class item_info extends AppCompatActivity {
             }
         }
 
-        Button btnHome = findViewById(R.id.btn_homepage);
-        btnHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(item_info.this, main_page.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
         final SimpleAdapter simpleAdapter = new SimpleAdapter(this, data, R.layout.comment_item,
                 new String[] { "userId", "comment", "time"},
                 new int[] { R.id.userId, R.id.commentInfo, R.id.time });
@@ -99,7 +89,7 @@ public class item_info extends AppCompatActivity {
                     return;
                 }
 
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss ");
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
                 Date curDate = new Date(System.currentTimeMillis());
                 String time = formatter.format(curDate);
 

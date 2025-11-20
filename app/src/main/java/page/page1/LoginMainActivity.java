@@ -30,6 +30,15 @@ public class LoginMainActivity extends Activity {
     protected static String post_userid;
     String user=null;
     String password=null;
+
+
+    @Override
+    public void onBackPressed() {
+        // 留空。
+        // 这里的关键是不要调用 super.onBackPressed();
+        // 这样系统就不会执行默认的“后退”操作。
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +63,6 @@ public class LoginMainActivity extends Activity {
                     Toast.makeText(getApplicationContext(), "请输入用户密码！", Toast.LENGTH_SHORT).show();
                 }
                 checkUser(user,password);
-
-
 
             }
         });

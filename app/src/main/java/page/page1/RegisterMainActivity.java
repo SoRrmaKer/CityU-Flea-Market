@@ -38,23 +38,32 @@ public class RegisterMainActivity extends AppCompatActivity {
         button_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                user=User.getText().toString();
-                password1=Password1.getText().toString();
-                password2=Password2.getText().toString();
+                // 建议加上 trim() 去除首尾空格，防止用户输入纯空格
+                user = User.getText().toString().trim();
+                password1 = Password1.getText().toString().trim();
+                password2 = Password2.getText().toString().trim();
 
-                if(user==null||user.equals("")){
+                // 1. 检查学号是否为空
+                if(user.isEmpty()){
                     Toast.makeText(getApplicationContext(), "请输入用户学号！", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                if(password1==null||password1.equals("")){
+
+                // 2. 检查密码是否为空
+                if(password1.isEmpty()){
                     Toast.makeText(getApplicationContext(), "请输入密码！", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+
+                // 3. 检查两次密码是否一致
                 if(!password1.equals(password2)){
                     Toast.makeText(getApplicationContext(), "两次输入的密码不一致!", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+
                 checkUser(user,password1);
             }
         });
-
         //返回登录
         button_return.setOnClickListener(new View.OnClickListener() {
             @Override

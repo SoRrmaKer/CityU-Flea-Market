@@ -21,8 +21,12 @@ public class MyselfActivity extends AppCompatActivity {
     private Button about;
     private Button login;
     private TextView myId;
+
     protected Intent intent;
     private String a;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -135,16 +139,11 @@ public class MyselfActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(a.equals("")||a==null){
-                    intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
-                    startActivity(intent);
-                }else{
-                    Toast.makeText(getApplicationContext(), "退出成功", Toast.LENGTH_SHORT).show();
-                    LoginMainActivity.post_userid="";
-                    intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
-                    startActivity(intent);
-                }
-
+                Toast.makeText(getApplicationContext(), "退出成功", Toast.LENGTH_SHORT).show();
+                LoginMainActivity.post_userid="";
+                intent = new Intent(MyselfActivity.this,LoginMainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
