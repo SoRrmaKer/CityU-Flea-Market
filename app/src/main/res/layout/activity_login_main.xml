@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="欢迎回来"
+            android:text="@string/welcome"
             android:textColor="#3F51B5"
             android:textSize="32sp"
             android:textStyle="bold"
@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="请登录您的账户"
+            android:text="@string/login_inform"
             android:textColor="#666666"
             android:textSize="16sp" />
     </LinearLayout>
@@ -51,17 +51,17 @@
             android:layout_height="24dp"
             android:src="@drawable/user"
             android:layout_marginEnd="12dp"
-            android:tint="#3F51B5" />
+            app:tint="#3F51B5" />
 
         <EditText
             android:id="@+id/login_user"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="请输入用户账号"
+            android:hint="@string/login_inform"
             android:textSize="16sp"
             android:maxLines="1"
-            android:singleLine="true"
+            android:inputType="text"
             android:background="@android:color/transparent"
             android:textColor="#000000"
             android:textColorHint="#999999" />
@@ -84,19 +84,19 @@
             android:layout_height="24dp"
             android:src="@drawable/passwd"
             android:layout_marginEnd="12dp"
-            android:tint="#3F51B5" />
+            app:tint="#3F51B5" />
 
         <EditText
             android:id="@+id/login_password"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="请输入用户密码"
+            android:hint="@string/Password_Hint"
             android:textSize="16sp"
             android:maxLines="1"
-            android:singleLine="true"
             android:inputType="textPassword"
             android:background="@android:color/transparent"
+            android:fontFamily="sans-serif"
             android:textColor="#000000"
             android:textColorHint="#999999" />
 
@@ -107,7 +107,7 @@
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="登 录"
+        android:text="@string/log_in"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
@@ -124,7 +124,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="还没有账户？"
+            android:text="@string/question"
             android:textSize="14sp"
             android:textColor="#666666" />
 
@@ -132,7 +132,7 @@
             android:id="@+id/toRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="立即注册"
+            android:text="@string/regist_button"
             android:textSize="14sp"
             android:textColor="#3F51B5"
             android:textStyle="bold"

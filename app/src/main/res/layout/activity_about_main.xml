@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="关于我们"
+            android:text="@string/about_us"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="校园易 - 让闲置物品流动起来"
+            android:text="@string/sub_title"
             android:textColor="#E8EAF6"
             android:textSize="14sp"
             android:layout_gravity="center" />
@@ -51,7 +51,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="校园易"
+                android:text="@string/app_name"
                 android:textColor="#3F51B5"
                 android:textSize="32sp"
                 android:textStyle="bold"
@@ -70,7 +70,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="应用介绍"
+                    android:text="@string/app_intro"
                     android:textColor="#333333"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -79,7 +79,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="校园易，专为大学生打造的闲置交易平台。告别繁琐的群聊和贴吧，让闲置物品在校园内轻松流转。我们连接买卖双方，让每一件闲置都能找到新主人，让每一次交易都简单安心。"
+                    android:text="@string/introduction"
                     android:textColor="#666666"
                     android:textSize="16sp"
                     android:lineSpacingExtra="4dp" />
@@ -97,7 +97,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="功能特点"
+                    android:text="@string/function_features"
                     android:textColor="#333333"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -106,7 +106,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="• 便捷的商品发布\n• 智能的商品分类\n• 安全的交易环境\n• 校园专属平台"
+                    android:text="@string/feature_main"
                     android:textColor="#666666"
                     android:textSize="16sp"
                     android:lineSpacingExtra="4dp" />
@@ -127,7 +127,7 @@
             android:id="@+id/cometo"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="进入主页"
+            android:text="@string/enter_main_page"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"

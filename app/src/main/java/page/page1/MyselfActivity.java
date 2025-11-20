@@ -42,9 +42,9 @@ public class MyselfActivity extends AppCompatActivity {
 
         Log.i("123",a);
         if(a.equals("")||a==null){
-            login.setText("登 录");
+            login.setText(getString(R.string.Login_Now));
         }else{
-            login.setText("退出登录");
+            login.setText(getString(R.string.LogOut));
         }
         //跳转到主页
         button1.setOnClickListener(new View.OnClickListener() {

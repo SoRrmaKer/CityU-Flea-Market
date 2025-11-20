@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper{
     private static final String dbname="mydb";
     public DatabaseHelper(Context context) {
-        super(context, dbname, null, 1);
+        super(context, dbname, null, 4);
     }
 
     @Override

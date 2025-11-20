@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="个人信息"
+            android:text="@string/User_Info"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="查看您的个人信息"
+            android:text="@string/Check_Info"
             android:textColor="#E8EAF6"
             android:textSize="14sp" />
     </LinearLayout>
@@ -55,7 +55,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="用户账号"
+                    android:text="@string/User_Account"
                     android:textColor="#3F51B5"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -82,7 +82,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="用户姓名"
+                    android:text="@string/User_Name"
                     android:textColor="#3F51B5"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -109,7 +109,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="用户专业"
+                    android:text="@string/User_Major"
                     android:textColor="#3F51B5"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -136,7 +136,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="联系方式"
+                    android:text="@string/Phone_Number"
                     android:textColor="#3F51B5"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -163,7 +163,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="QQ号"
+                    android:text="QQ"
                     android:textColor="#3F51B5"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -190,7 +190,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="地址"
+                    android:text="@string/Address"
                     android:textColor="#3F51B5"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -224,7 +224,7 @@
             android:layout_height="56dp"
             android:layout_weight="1"
             android:layout_marginEnd="8dp"
-            android:text="返回"
+            android:text="@string/Back"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#3F51B5"
@@ -236,7 +236,7 @@
             android:layout_height="56dp"
             android:layout_weight="1"
             android:layout_marginStart="8dp"
-            android:text="修改信息"
+            android:text="@string/Confirm"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"

@@ -1,3 +1,82 @@
 <resources>
-    <string name="app_name">校园易</string>
+    <string name="User_Center">UserCenter</string>
+    <string name="User_Info">User Info</string>
+    <string name="My_Post">Post Of Mine</string>
+    <string name="Change_Password">Change Password</string>
+    <string name="About">About Us</string>
+    <string name="LogOut">Log Out</string>
+    <string name="HomePage">HomePage</string>
+    <string name="Post_Item">Post Item</string>
+    <string name="Create_Account">Create Account</string>
+    <string name="Signup_Hint">Please Fill the Information to Register</string>
+    <string name="Student_Id">Please Enter Your Student ID</string>
+    <string name="Password_Hint">Please Enter Your Password</string>
+    <string name="Password_Check">Please Check Your Password</string>
+    <string name="Signup">Sign Up</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Already_Have">Already Have Account?</string>
+    <string name="Login_Now">Login Now</string>
+    <string name="Edit_Info">Edit Your Information Here</string>
+    <string name="User_Account">User Account</string>
+    <string name="User_Name">User Name</string>
+    <string name="User_Major">User Major</string>
+    <string name="Phone_Number">Phone Number</string>
+    <string name="Address">Address</string>
+    <string name="Edit_Name">Please Enter Your Name</string>
+    <string name="Edit_Major">Please Enter Your Major</string>
+    <string name="Edit_Phone">Please Enter Your Phone Number</string>
+    <string name="Edit_qq">Please Enter Your QQ</string>
+    <string name="Edit_Address">Please Enter Your Address</string>
+    <string name="Check_Info">Check Your Information</string>
+    <string name="Back">Back</string>
+    <string name="Confirm">Confirm</string>
+    <string name="Add_Comment">Add Comment</string>
+    <string name="Comment_Hint">Leave Your Comment Here...</string>
+    <string name="Comment_Submit">Submit Comment</string>
+    <string name="Sports_Item">Sports Items</string>
+    #about_main
+    <string name="about_us">About US</string>
+    <string name="app_name">CityU Flea Market</string>
+    <string name="sub_title">Get idle items moving.</string>
+    <string name="app_intro">Application Introduction</string>
+    <string name="introduction">CityU Flea Market is an idle goods trading platform specifically designed for college students. Say goodbye to the cumbersome group chats and forums, and let the idle items flow freely within the campus. We connect both buyers and sellers, ensuring that every piece of idle goods can find a new owner, and making every transaction simple and reassuring.</string>
+    <string name="function_features">Functional Characteristics</string>
+    <string name="feature_main">• Convenient product release\n•  Intelligent product categorization\n•  Secure transaction environment\n• Campus-exclusive platform</string>
+    <string name="enter_main_page">Enter Homepage</string>
+    #changepwd
+    <string name="password_sub_title">Please be sure to change your password carefully</string>
+    <string name="current_user">Current User：</string>
+    <string name="old_password">Old Password</string>
+    <string name="old_password_explain">Please enter your old password</string>
+    <string name="new_password">New Password</string>
+    <string name="new_password_explain">Please enter a new password</string>
+    <string name="new_password_confirm">Confirm Password</string>
+    <string name="new_password_confirm_inform">Please confirm your new password</string>
+    <string name="change_confirm">Confirm Change</string>
+    #kind page2-4
+    <string name="household_goods">Household Items</string>
+    <string name="electronic_devices">Electrical Devices</string>
+    <string name="study_stuffs">Study Stuffs</string>
+    #login_main
+    <string name="welcome">Welcome Back</string>
+    <string name="login_inform">Please log in to your account</string>
+    <string name="login_number">Please enter your user account</string>
+    <string name="password_submit">Please enter your password</string>
+    <string name="log_in">Sign in</string>
+    <string name="question">Do not have any account yet?</string>
+    <string name="regist_button">Sign up now</string>
+    #main
+    <string name="my_submission">MY POST</string>
+    <string name="refresh">Refresh</string>
+    <string name="submit_item">Release Commodities</string>
+    <string name="submit_inform">Click to upload the product image</string>
+    <string name="item_title">Product Name</string>
+    <string name="item_name">Please enter the product name</string>
+    <string name="item_classify">Commodity Classification</string>
+    <string name="item_price">Item Price</string>
+    <string name="price_inform">Please enter your item price</string>
+    <string name="contact">Contact Information</string>
+    <string name="contact_inform">Please enter your contact information</string>
+    <string name="item_description">Commodities Description</string>
+    <string name="item_description_inform">Please enter your description</string>
 </resources>

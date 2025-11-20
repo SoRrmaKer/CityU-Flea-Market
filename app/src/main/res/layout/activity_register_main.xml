@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="#FFFFFF"
     android:padding="24dp"
@@ -20,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="创建账户"
+            android:text="@string/Create_Account"
             android:textColor="#3F51B5"
             android:textSize="32sp"
             android:textStyle="bold"
@@ -29,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="填写信息完成注册"
+            android:text="@string/Signup_Hint"
             android:textColor="#666666"
             android:textSize="16sp" />
     </LinearLayout>
@@ -51,14 +52,14 @@
             android:layout_height="24dp"
             android:src="@drawable/user"
             android:layout_marginEnd="12dp"
-            android:tint="#3F51B5" />
+            app:tint="#3F51B5" />
 
         <EditText
             android:id="@+id/user"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="请输入您的学号"
+            android:hint="@string/Student_Id"
             android:textSize="16sp"
             android:maxLines="1"
             android:singleLine="true"
@@ -84,14 +85,14 @@
             android:layout_height="24dp"
             android:src="@drawable/passwd"
             android:layout_marginEnd="12dp"
-            android:tint="#3F51B5" />
+            app:tint="#3F51B5" />
 
         <EditText
             android:id="@+id/password1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="请输入您的密码"
+            android:hint="@string/Password_Hint"
             android:textSize="16sp"
             android:maxLines="1"
             android:singleLine="true"
@@ -118,14 +119,14 @@
             android:layout_height="24dp"
             android:src="@drawable/passwd"
             android:layout_marginEnd="12dp"
-            android:tint="#3F51B5" />
+            app:tint="#3F51B5" />
 
         <EditText
             android:id="@+id/password2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="请确认您的密码"
+            android:hint="@string/Password_Check"
             android:textSize="16sp"
             android:maxLines="1"
             android:singleLine="true"
@@ -141,7 +142,7 @@
         android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="注 册"
+        android:text="@string/Signup"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
@@ -153,7 +154,7 @@
         android:id="@+id/toReturn"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="取 消"
+        android:text="@string/Cancel"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#3F51B5"
@@ -170,14 +171,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="已有账户？"
+            android:text="@string/Already_Have"
             android:textSize="14sp"
             android:textColor="#666666" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="立即登录"
+            android:text="@string/Login_Now"
             android:textSize="14sp"
             android:textColor="#3F51B5"
             android:textStyle="bold"

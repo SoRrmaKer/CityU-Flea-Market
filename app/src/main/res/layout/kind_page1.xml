@@ -13,7 +13,7 @@
             android:textColor="#000000"
             android:gravity="center"
             android:textSize="25dp"
-            android:text="体育用品"
+            android:text="@string/Sports_Item"
             android:layout_marginTop="10dp"/>
         <ImageView
             android:layout_width="wrap_content"
@@ -49,59 +49,67 @@
             />
         <RadioGroup
             android:id="@+id/radioGroup"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="55dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-            <!--第一个RadioButton-->
             <RadioButton
                 android:id="@+id/button_1"
-                android:text="首页"
-                android:textStyle="bold"
-                android:button="@null"
-                android:textColor="#666666"
-                android:background="#ffffff"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/pic_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:button="@null"
+                android:drawableTop="@drawable/pic_home"
+                android:gravity="center"
+                android:text="@string/HomePage"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:textStyle="bold" />
 
-                />
             <View
-                android:background="#CCCCCC"
-                android:layout_width="2dp"
-                android:layout_height="match_parent"/>
-            <!--第二个RadioButton-->
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#CCCCCC" />
+
             <RadioButton
                 android:id="@+id/button_2"
-                android:text="发布闲置"
-                android:button="@null"
-                android:textStyle="bold"
-                android:textColor="#666666"
-                android:background="#ffffff"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/pic_add"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <!--第三个RadioButton-->
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:button="@null"
+                android:drawableTop="@drawable/pic_add"
+                android:gravity="center"
+                android:text="@string/Post_Item"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:textStyle="bold" />
+
             <View
-                android:background="#CCCCCC"
-                android:layout_width="2dp"
-                android:layout_height="match_parent"/>
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#CCCCCC" />
+
             <RadioButton
                 android:id="@+id/button_3"
-                android:text="个人中心"
-                android:textStyle="bold"
-                android:button="@null"
-                android:textColor="#666666"
-                android:background="#ffffff"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/pic_my"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:button="@null"
+                android:drawableTop="@drawable/pic_my"
+                android:gravity="center"
+                android:text="@string/User_Center"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:textStyle="bold" />
         </RadioGroup>
 
     </LinearLayout>
