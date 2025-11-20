@@ -150,6 +150,20 @@ public class MyselfActivity extends AppCompatActivity {
                 }
             }
         });
+        // 找到语言设置按钮
+        Button languageSetting = findViewById(R.id.language_setting);
+
+        // 跳转语言选择页面
+        languageSetting.setOnClickListener(v -> {
+            if (a.equals("") || a == null) {
+                // 未登录也允许切换语言
+                Intent intent = new Intent(MyselfActivity.this, LanguageSettingActivity.class);
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent(MyselfActivity.this, LanguageSettingActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

@@ -132,5 +132,9 @@
     #usermsg
     <string name="user_unknown">用户不存在！</string>
     <string name="inform_failed">无法显示个人信息</string>
-
+    #LanguageSetting
+    <string name="language_setting">语言设置/LANGUAGE SETTING</string>
+    <string name="select_language">Select Language</string>
+    <string name="language_english">English</string>
+    <string name="language_chinese">中文</string>
 </resources>
