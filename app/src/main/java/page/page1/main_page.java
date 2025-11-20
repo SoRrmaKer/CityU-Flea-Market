@@ -103,6 +103,14 @@ public class main_page extends AppCompatActivity implements View.OnClickListener
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
     }
+
+    @Override
+    public void onBackPressed() {
+        // 留空。
+        // 这里的关键是不要调用 super.onBackPressed();
+        // 这样系统就不会执行默认的“后退”操作。
+    }
+
     @Override
     public void onClick(View v){
         switch (v.getId()){
@@ -121,10 +129,6 @@ public class main_page extends AppCompatActivity implements View.OnClickListener
             case R.id.kind4:
                 Intent KindIntent4 = new Intent(this,kind_page4.class);
                 startActivity(KindIntent4);
-                break;
-            case R.id.button_1:
-                Intent button1 = new Intent(main_page.this,main_page.class);
-                startActivity(button1);
                 break;
             case R.id.button_2:
                 Intent button2 = new Intent(this,AddItem.class);

@@ -105,14 +105,14 @@ public class MyItems extends AppCompatActivity implements View.OnClickListener{
             }
         });
 
-        Button button2=(Button)findViewById(R.id.but2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MyItems.this,MyItems.class);
-                startActivity(intent);
-            }
-        });
+//        Button button2=(Button)findViewById(R.id.but2);
+//        button2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent(MyItems.this,MyItems.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

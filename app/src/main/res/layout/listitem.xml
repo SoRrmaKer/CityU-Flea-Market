@@ -53,6 +53,8 @@
             android:layout_height="30dp"
             android:gravity="center_vertical"
             android:text="刚买没多久，希望转卖出去..."
+            android:maxLines="1"
+            android:ellipsize="end"
             android:textColor="#000000"
             android:textSize="16dp" />
 

@@ -34,6 +34,7 @@
     <string name="Comment_Hint">Leave Your Comment Here...</string>
     <string name="Comment_Submit">Submit Comment</string>
     <string name="Sports_Item">Sports Items</string>
+    <string name="Edit">Edit Info</string>
     #about_main
     <string name="about_us">About US</string>
     <string name="app_name">CityU Flea Market</string>

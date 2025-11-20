@@ -8,13 +8,11 @@
     tools:context="page.page1.MyItems">
 
     <!-- 顶部标题栏 -->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="#3F51B5"
-        android:padding="16dp"
-        android:gravity="center_vertical">
+        android:padding="16dp">
 
         <Button
             android:id="@+id/but1"
@@ -24,28 +22,29 @@
             android:textSize="12sp"
             android:textColor="#FFFFFF"
             android:background="@android:color/transparent"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="@string/my_submission"
             android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
-            android:gravity="center" />
+            android:layout_centerInParent="true" />
 
-        <Button
-            android:id="@+id/but2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/refresh"
-            android:textSize="12sp"
-            android:textColor="#FFFFFF"
-            android:background="@android:color/transparent"
-            android:padding="8dp" />
-    </LinearLayout>
+    </RelativeLayout>
+<!--        <Button-->
+<!--            android:id="@+id/but2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/refresh"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:padding="8dp" />-->
 
     <!-- 列表视图 -->
     <ListView

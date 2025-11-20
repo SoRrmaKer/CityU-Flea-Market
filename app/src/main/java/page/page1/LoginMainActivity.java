@@ -86,6 +86,7 @@ public class LoginMainActivity extends Activity {
                 Intent intent = new Intent(LoginMainActivity.this,main_page.class);
                 post_userid=user;
                 startActivity(intent);
+                finish();
             }
             cursor.close();
             db.close();

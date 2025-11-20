@@ -69,13 +69,13 @@ public class MyselfActivity extends AppCompatActivity {
         });
 
         //跳转到个人中心
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(MyselfActivity.this,MyselfActivity.class);
-                startActivity(intent);
-            }
-        });
+//        button3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                intent = new Intent(MyselfActivity.this,MyselfActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         //跳转到个人信息页面
         myself.setOnClickListener(new View.OnClickListener() {

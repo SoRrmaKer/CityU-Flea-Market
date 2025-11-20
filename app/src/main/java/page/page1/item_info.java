@@ -77,12 +77,13 @@ public class item_info extends AppCompatActivity {
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 返回首页的逻辑，例如 finish() 或者 Intent 跳转
-                finish();
+                Intent intent = new Intent(item_info.this, main_page.class);
+                startActivity(intent);
             }
         });
 
-        SimpleAdapter simpleAdapter = new SimpleAdapter(this, data, R.layout.comment_item, new String[] { "userId", "comment", "time"},
+        final SimpleAdapter simpleAdapter = new SimpleAdapter(this, data, R.layout.comment_item,
+                new String[] { "userId", "comment", "time"},
                 new int[] { R.id.userId, R.id.commentInfo, R.id.time });
         commentList.setAdapter(simpleAdapter);
         Button submit = (Button)findViewById(R.id.submit);
@@ -90,21 +91,52 @@ public class item_info extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText comment = (EditText)findViewById(R.id.comment);
-                String submit_comment = comment.getText().toString();
+                String submit_comment = comment.getText().toString().trim();
+
+                if (submit_comment.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "评论内容不能为空", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss ");
                 Date curDate = new Date(System.currentTimeMillis());
                 String time = formatter.format(curDate);
-                ContentValues values=new ContentValues();
-                values.put("userId",post_userid);
-                values.put("itemId",intent.getStringExtra("id"));
-                values.put("comment",submit_comment);
-                values.put("time",time);
-                db.insert("comments",null,values);
-                Log.i("1","评论成功");
+
+                // 1. 数据库插入操作 (保持不变)
+                ContentValues values = new ContentValues();
+                values.put("userId", post_userid);
+                values.put("itemId", intent.getStringExtra("id"));
+                values.put("comment", submit_comment);
+                values.put("time", time);
+                db.insert("comments", null, values);
+
+                Log.i("1", "评论成功");
                 Toast.makeText(getApplicationContext(), "评论成功", Toast.LENGTH_SHORT).show();
-                Intent intent_=new Intent(item_info.this,item_info.class);
-                intent_.putExtra("id",intent.getStringExtra("id"));
-                startActivity(intent_);
+
+                // ================= 修改重点开始 =================
+
+                // 2. 构造一个新的 Map 对象，代表刚才发的评论
+                Map<String, Object> newCommentItem = new HashMap<>();
+                newCommentItem.put("userId", post_userid);
+                newCommentItem.put("comment", submit_comment);
+                newCommentItem.put("time", time);
+
+                // 3. 将新数据添加到当前的列表数据源 data 中
+                data.add(newCommentItem);
+
+                // 4. 通知适配器数据已改变，立刻刷新 ListView
+                simpleAdapter.notifyDataSetChanged();
+
+                // 5. 清空输入框，防止重复提交并提升体验
+                comment.setText("");
+
+                // 6. 隐藏键盘 (可选优化，如果需要可以加上)
+                // InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                // imm.hideSoftInputFromWindow(comment.getWindowToken(), 0);
+
+                // ================= 修改重点结束 =================
+
+                // 注意：原本的 Intent跳转 和 finish() 代码已删除
             }
         });
     }
