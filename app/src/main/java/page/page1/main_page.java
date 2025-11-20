@@ -60,6 +60,7 @@ public class main_page extends AppCompatActivity implements View.OnClickListener
             }
         }
 
+
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, data, R.layout.listitem, new String[] { "image", "title", "kind", "info", "price" },
                 new int[] { R.id.item_image, R.id.title, R.id.kind, R.id.info, R.id.price });
         simpleAdapter.setViewBinder(new SimpleAdapter.ViewBinder() {

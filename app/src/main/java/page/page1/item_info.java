@@ -52,7 +52,7 @@ public class item_info extends AppCompatActivity {
                 imagebm = BitmapFactory.decodeByteArray(imagedata, 0, imagedata.length);
                 image.setImageBitmap(imagebm);
                 title.setText(cursor.getString(2));
-                price.setText(cursor.getString(5));
+                price.setText(cursor.getString(5) + "  HKD");
                 info.setText(cursor.getString(4));
                 contact.setText(cursor.getString(8));
                 cursor.moveToNext();
@@ -72,6 +72,16 @@ public class item_info extends AppCompatActivity {
                 data.add(item); // 加入到列表中
             }
         }
+
+        Button btnHome = findViewById(R.id.btn_homepage);
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 返回首页的逻辑，例如 finish() 或者 Intent 跳转
+                finish();
+            }
+        });
+
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, data, R.layout.comment_item, new String[] { "userId", "comment", "time"},
                 new int[] { R.id.userId, R.id.commentInfo, R.id.time });
         commentList.setAdapter(simpleAdapter);

@@ -49,7 +49,7 @@ public class AddItem extends AppCompatActivity {
 
         dbHelper = new DatabaseHelper(this);
 
-        String[] ctype = new String[]{"生活用品", "学习用品", "电子产品", "体育用品"};
+        String[] ctype = new String[]{getString(R.string.household_goods), getString(R.string.study_stuffs), getString(R.string.electronic_devices), getString(R.string.sport_item)};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ctype);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 

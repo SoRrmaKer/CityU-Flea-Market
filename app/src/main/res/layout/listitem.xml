@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/item_image"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content" />
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,25 +16,36 @@
         android:orientation="vertical"
         android:paddingLeft="20dp">
 
-        <TextView
-            android:id="@+id/title"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:gravity="center_vertical"
-            android:text="一个九成新的篮球"
-            android:textColor="#000000"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            >
 
-        <TextView
-            android:id="@+id/kind"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:gravity="center_vertical"
-            android:text="体育用品"
-            android:textColor="#000000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                android:text="一个九成新的篮球"
+                android:textColor="#000000"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/kind"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:gravity="center_vertical|end"
+                android:text="体育用品"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/info"
@@ -43,11 +54,14 @@
             android:gravity="center_vertical"
             android:text="刚买没多久，希望转卖出去..."
             android:textColor="#000000"
-            android:textSize="15dp" />
+            android:textSize="16dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
             android:orientation="horizontal">
 
             <TextView
@@ -57,15 +71,15 @@
                 android:gravity="center_vertical"
                 android:text="59"
                 android:textColor="#ff0000"
-                android:textSize="23dp" />
+                android:textSize="18dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:gravity="center_vertical"
-                android:text="元"
+                android:text="HKD"
                 android:textColor="#ff0000"
-                android:textSize="23dp" />
+                android:textSize="18dp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

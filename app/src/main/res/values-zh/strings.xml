@@ -55,6 +55,7 @@
     <string name="new_password_confirm_inform">请确认新密码</string>
     <string name="change_confirm">确认修改</string>
     #kind page2-4
+    <string name="sport_item">体育用品</string>
     <string name="household_goods">生活用品</string>
     <string name="electronic_devices">电子产品</string>
     <string name="study_stuffs">学习用品</string>
@@ -80,5 +81,6 @@
     <string name="contact_inform">请输入联系电话</string>
     <string name="item_description">商品描述</string>
     <string name="item_description_inform">请输入商品描述信息</string>
-
+    <string name="Comment">评论</string>
+    <string name="Delete_Hint">长按以删除</string>
 </resources>

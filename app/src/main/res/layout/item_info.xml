@@ -1,140 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:scrollbars="vertical"
     tools:context="page.page1.main_page">
 
-    <!-- 商品图片 -->
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:scaleType="centerCrop"
-        android:background="#F5F5F5" />
-
-    <!-- 商品信息卡片 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:background="#FFFFFF"
-        android:focusable="true"
-        android:focusableInTouchMode="true">
+        android:orientation="vertical">
 
-        <!-- 价格和标题 -->
-        <TextView
-            android:id="@+id/item_price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:textColor="#FF3B30"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <TextView
-            android:id="@+id/item_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:layout_marginBottom="12dp" />
-
-        <!-- 商品描述 -->
-        <TextView
-            android:id="@+id/item_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#666666"
-            android:lineSpacingExtra="4dp"
-            android:layout_marginBottom="16dp" />
-
-        <!-- 联系方式 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="#F8F9FA"
-            android:padding="16dp"
-            android:layout_marginBottom="20dp">
+            android:paddingTop="10dp"
+            android:paddingStart="10dp">
 
-            <TextView
+            <Button
+                android:id="@+id/btn_homepage"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Phone_Number"
-                android:textSize="16sp"
-                android:textColor="#333333"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/contact"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="18709710657"
-                android:textSize="16sp"
-                android:textColor="#3F51B5"
-                android:layout_marginStart="8dp" />
+                android:layout_height="40dp"
+                android:text="@string/HomePage"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:background="#3F51B5" />
         </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:background="#F5F5F5" />
 
-        <!-- 评论输入区域 -->
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Add_Comment"
-            android:textSize="18sp"
-            android:textColor="#333333"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="#FFFFFF"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
 
-        <EditText
-            android:id="@+id/comment"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:background="#F5F5F5"
-            android:padding="16dp"
-            android:hint="@string/Comment_Hint"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:textColorHint="#999999"
-            android:gravity="top"
-            android:inputType="textMultiLine"
-            android:layout_marginBottom="12dp" />
+            <TextView
+                android:id="@+id/item_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textColor="#FF3B30"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
 
-        <Button
-            android:id="@+id/submit"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:text="@string/Comment_Submit"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:background="#3F51B5"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:layout_gravity="end"
-            android:layout_marginBottom="24dp" />
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
 
-        <!-- 评论列表 -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="大家的评论"
-            android:textSize="18sp"
-            android:textColor="#333333"
-            android:textStyle="bold"
-            android:layout_marginBottom="12dp" />
+            <TextView
+                android:id="@+id/item_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#666666"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="16dp" />
 
-        <ListView
-            android:id="@+id/commentList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:divider="#E0E0E0"
-            android:dividerHeight="1dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#F8F9FA"
+                android:padding="16dp"
+                android:layout_marginBottom="20dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Phone_Number"
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="18709710657"
+                    android:textSize="16sp"
+                    android:textColor="#3F51B5"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Add_Comment"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/comment"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="#F5F5F5"
+                android:padding="16dp"
+                android:hint="@string/Comment_Hint"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:textColorHint="#999999"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/Comment_Submit"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="#3F51B5"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:layout_gravity="end"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Comment"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <ListView
+                android:id="@+id/commentList"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:divider="#E0E0E0"
+                android:dividerHeight="1dp" />
+
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

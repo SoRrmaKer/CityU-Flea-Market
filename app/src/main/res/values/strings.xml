@@ -54,6 +54,7 @@
     <string name="new_password_confirm_inform">Please confirm your new password</string>
     <string name="change_confirm">Confirm Change</string>
     #kind page2-4
+    <string name="sport_item">Sports Item</string>
     <string name="household_goods">Household Items</string>
     <string name="electronic_devices">Electrical Devices</string>
     <string name="study_stuffs">Study Stuffs</string>
@@ -69,7 +70,7 @@
     <string name="my_submission">MY POST</string>
     <string name="refresh">Refresh</string>
     <string name="submit_item">Release Commodities</string>
-    <string name="submit_inform">Click to upload the product image</string>
+    <string name="submit_inform">Upload Img</string>
     <string name="item_title">Product Name</string>
     <string name="item_name">Please enter the product name</string>
     <string name="item_classify">Commodity Classification</string>
@@ -79,4 +80,6 @@
     <string name="contact_inform">Please enter your contact information</string>
     <string name="item_description">Commodities Description</string>
     <string name="item_description_inform">Please enter your description</string>
+    <string name="Comment">Comments</string>
+    <string name="Delete_Hint">Hold to Delete</string>
 </resources>

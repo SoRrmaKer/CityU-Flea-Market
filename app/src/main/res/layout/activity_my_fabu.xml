@@ -36,6 +36,7 @@
             android:textStyle="bold"
             android:text="体育用品"
             />
+
         <TextView
             android:id="@+id/info"
             android:layout_width="match_parent"
@@ -43,17 +44,20 @@
             android:textSize="15dp"
             android:textColor="#000000"
             android:gravity="center_vertical"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:text="刚买没多久，希望转卖出去..."
             />
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/price"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:textSize="23dp"
+                android:textSize="18dp"
                 android:textColor="#ff0000"
                 android:gravity="center_vertical"
                 android:text="59"
@@ -61,19 +65,25 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:textSize="23dp"
+                android:textSize="18dp"
                 android:textColor="#ff0000"
                 android:gravity="center_vertical"
-                android:text="元    "
+                android:text="HKD   "
                 />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
             <TextView
                 android:id="@+id/delete"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:textSize="17dp"
+                android:textSize="15dp"
+                android:layout_gravity="end"
                 android:textColor="#ff0000"
                 android:gravity="center_vertical"
-                android:text="长按商品项可删除"
+                android:text="@string/Delete_Hint"
                 />
         </LinearLayout>
 
