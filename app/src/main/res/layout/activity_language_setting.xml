@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context="page.page1.changepwdActivity">
+
+    <!-- 顶部标题区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:background="#3F51B5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_language"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_english"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="16dp"
+        android:background="#E8EAF6"
+        android:text="@string/language_english"
+        android:textColor="#3F51B5"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_chinese"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#E8EAF6"
+        android:text="@string/language_chinese"
+        android:textColor="#3F51B5"
+        android:textSize="18sp" />
+
+</LinearLayout>
